@@ -1,0 +1,1 @@
+npm start and npm test run without the run word
