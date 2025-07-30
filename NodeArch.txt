@@ -1,0 +1,34 @@
+There is a client which requests from the server which runs in node.js where it can be anyhting form golang etc
+
+client requests server 
+
+EVENT QUEUE:
+Request isme QUEUE hojati hai 
+
+Iske baad jaati hai event loop mai 
+which always run in the queue agar koi request aati hai 
+using first in first out
+
+now a request can be a blocking and non-blocking operation 
+
+Agar non-blocking operation kara and user ko repsonse bhejdiya
+
+in case of blocking operation it goes to THREAD POOL where thread is basically a worker and ek kaam ko karne ke liye ek thread assign hoga 
+
+firstly it checks if there is a worker availble 
+then uske baad result return hoga and user ko repsonse send hoga
+
+But what if there are no workers it waits till the thread is free 
+
+if there are many users and you use these blocking opeations then it would stop the server 
+
+better to use non-blocking opeations
+
+
+There are 4 threads default 
+but you can increase it depends on machine to machine jitne cors hai max?
+ 8 core cpu hai to max 8 threads
+ const os = require('os')
+ console.log(os.cpus().length)
+
+ though there are 8 threads you send all them to the main thread and they are sorted one by one
