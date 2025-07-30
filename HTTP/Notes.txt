@@ -1,0 +1,2 @@
+In JSON File if there is no     "start": "node index"
+extension then first index is seaerched then .js is appended if js found else with json then with .node etc
